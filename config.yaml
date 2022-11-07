@@ -1,0 +1,21 @@
+app:
+  name: "go-keyboard"
+  namespace: "test"
+  debug_event: true # 是否仅调试跟踪模式，此模式仅会打印键盘、鼠标事件到日志输入
+log:
+  log_path: ./logs/go_keyboard.log
+  debug: true # 日志debug若为true，则直接将信息输出到标准输出
+keyboard:
+  - name: "loop press number3(ctrl+shift+9/0)"
+    process_name: "iterm"
+    key_press: "num3" # 循环持续按键 3
+    key_sleep: 100 # 模拟按键间隔，单位ms
+    start_stop_key_diff: true # 如果启、停按键有差异，则需要分别配置start_key和stop_key，一致则仅需要配置start_key即可
+    start_key: [ "9", "ctrl", "shift" ]
+    stop_key: [ "0", "ctrl", "shift" ]
+  - name: "F12"
+    process_name: "goland"
+    key_press: "num4"
+    key_sleep: 500
+    start_stop_key_diff: false
+    start_key: [ "+", "ctrl" ]
