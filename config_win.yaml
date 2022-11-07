@@ -1,0 +1,21 @@
+app:
+  name: "go-keyboard"
+  namespace: "windows"
+  debug_event: true
+log:
+  log_path: ./logs/go_keyboard.log
+  debug: true
+keyboard:
+  - name: "jx3->3(ctrl+shift+9/0)"
+    process_name: "jx3client"
+    key_press: "num3"
+    key_sleep: 100
+    start_stop_key_diff: true
+    start_key: [ "9", "ctrl", "shift" ]
+    stop_key: [ "0", "ctrl", "shift" ]
+  - name: "jx3->4(ctrl++)"
+    process_name: "jx3client"
+    key_press: "num4"
+    key_sleep: 500
+    start_stop_key_diff: false
+    start_key: [ "+", "ctrl" ]
